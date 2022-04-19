@@ -4,6 +4,7 @@ body {
 
 .main-wrapper {
   display: flex;
+  justify-content: space-between;
   max-width: 1256px;
   padding: 40px;
   margin: 0 auto;

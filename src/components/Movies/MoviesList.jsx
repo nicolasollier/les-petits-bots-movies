@@ -4,6 +4,10 @@ import React, { useEffect, useState } from "react";
 
 //Components
 import MoviePoster from "./MoviePoster/MoviePoster";
+import MovieId from "./MovieId/MovieId";
+
+//Custom classes
+import classes from './MoviesList.module.css'
 
 //Import the "Hidden Figures" poster from Figma blobs, anticipates futures img url's from API call can also be found in assets/images
 const imgUrl =
@@ -37,8 +41,8 @@ const MoviesList = () => {
       <MoviePoster imgUrl={imgUrl} />
       {movies.map((movie) => {
         return (
-          <div key={movie.id}>
-            <p>{movie.id}</p>
+          <div className={classes.movie__form} key={movie.id}>
+            <MovieId />
             <p>{movie.name}</p>
             <p>{movie.description}</p>
           </div>
