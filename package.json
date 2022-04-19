@@ -2,6 +2,7 @@
   "name": "les-petits-bots-movies",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://176.31.254.112:8080/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",

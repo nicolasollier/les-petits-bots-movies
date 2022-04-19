@@ -1,10 +1,10 @@
 import './App.css';
-import MoviePoster from './components/Movie/MoviePoster';
+import Movie from './components/Movie/Movie';
 
 function App() {
   return (
     <div className="main-wrapper">
-      <MoviePoster />
+      <Movie />
     </div>
   );
 }
