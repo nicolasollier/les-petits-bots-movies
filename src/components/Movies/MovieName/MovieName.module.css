@@ -1,0 +1,26 @@
+.subheading,
+.movieId {
+  text-align: left;
+  margin: 0;
+}
+
+.subheading {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.movieId {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.edit-icn {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  transition: fill ease-in 0.1s;
+
+  cursor: pointer;
+}
