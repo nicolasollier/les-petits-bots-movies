@@ -1,0 +1,21 @@
+.subheading,
+.movieId {
+  text-align: left;
+  margin: 0;
+}
+
+.subheading {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  color: #000000;
+}
+
+.movieId {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+
+  color: #111827;
+}
