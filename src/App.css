@@ -1,0 +1,8 @@
+body {
+  background-color: hsla(204, 100%, 97%, 1);
+}
+
+.main-wrapper {
+  display: flex;
+  padding: 40px;
+}
