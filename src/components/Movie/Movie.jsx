@@ -2,17 +2,20 @@ import axios from "axios";
 import React, { useEffect } from "react";
 
 const Movie = () => {
-  const makeAPICall = async () => {
+  const getMovies = async () => {
     try {
       const res = await axios.get("movies");
-      console.log(res);
+      const datas = res.data;
+
+      return datas;
+      
     } catch (error) {
       throw new Error(error);
     }
   };
 
   useEffect(() => {
-    makeAPICall();
+    getMovies();
   }, []);
 
   return <div>Movie</div>;
