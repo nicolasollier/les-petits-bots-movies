@@ -1,5 +1,13 @@
+//import Config & dependencies
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+
+//Components
+import MoviePoster from "./MoviePoster/MoviePoster";
+
+//Import the "Hidden Figures" poster from imdDB assets, anticipates futures img url's from API call
+const imgUrl =
+  "https://m.media-amazon.com/images/M/MV5BMzg2Mzg4YmUtNDdkNy00NWY1LWE3NmEtZWMwNGNlMzE5YzU3XkEyXkFqcGdeQXVyMjA5MTIzMjQ@._V1_.jpg";
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
@@ -14,7 +22,6 @@ const Movie = () => {
       let movie = [datas[datas.length - 1]];
 
       setMovies(movie);
-
     } catch (error) {
       throw new Error(error);
     }
@@ -26,6 +33,7 @@ const Movie = () => {
 
   return (
     <>
+      <MoviePoster imgUrl={imgUrl} />
       {movies.map((movie) => {
         return (
           <div key={movie.id}>
