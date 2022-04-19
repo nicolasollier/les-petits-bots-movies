@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import MoviePoster from "../MoviePoster/MoviePoster";
 import MovieId from "../MovieId/MovieId";
 import MovieName from "../MovieName/MovieName";
+import MovieDescription from "../MovieDescription/MovieDescription";
 
 //Custom classes
 import classes from "./MoviesList.module.css";
@@ -45,7 +46,7 @@ const MoviesList = () => {
           <div className={classes.movie__infos} key={movie.id}>
             <MovieId movieId={movie.id} />
             <MovieName movieName={movie.name} />
-            <p>{movie.description}</p>
+            <MovieDescription movieDescription={movie.description} />
           </div>
         );
       })}

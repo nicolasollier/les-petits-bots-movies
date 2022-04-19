@@ -2,9 +2,9 @@ import React from "react";
 import Card from "../../UI/Card/Card";
 
 //Custom classes
-import classes from "./MovieName.module.css";
+import classes from "./MovieDescription.module.css";
 
-const MovieName = ({ movieName }) => {
+const MovieDescription = ({ movieDescription }) => {
   return (
     <Card>
       <svg
@@ -27,10 +27,10 @@ const MovieName = ({ movieName }) => {
         />
       </svg>
 
-      <span className={classes.subheading}>Titre</span>
-      <p className={classes.movieName}>#{movieName}</p>
+      <span className={classes.subheading}>Description</span>
+      <p className={classes.movieDescription}>#{movieDescription}</p>
     </Card>
   );
 };
 
-export default MovieName;
+export default MovieDescription;
