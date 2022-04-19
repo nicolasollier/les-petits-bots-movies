@@ -1,12 +1,16 @@
-import React from 'react'
-import Card from '../../UI/Card/Card'
+import React from "react";
+import Card from "../../UI/Card/Card";
 
-const MovieId = () => {
+//Custom classes
+import classes from "./MovieId.module.css"
+
+const MovieId = ({ movieId }) => {
   return (
     <Card>
-      <h1>Hello world!</h1>
+      <span className={classes.id}>ID</span>
+      <p>#{movieId}</p>
     </Card>
-  )
-}
+  );
+};
 
-export default MovieId
+export default MovieId;

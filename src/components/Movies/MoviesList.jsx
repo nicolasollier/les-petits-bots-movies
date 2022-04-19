@@ -42,7 +42,7 @@ const MoviesList = () => {
       {movies.map((movie) => {
         return (
           <div className={classes.movie__form} key={movie.id}>
-            <MovieId />
+            <MovieId movieId={movie.id} />
             <p>{movie.name}</p>
             <p>{movie.description}</p>
           </div>
