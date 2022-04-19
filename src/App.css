@@ -4,5 +4,7 @@ body {
 
 .main-wrapper {
   display: flex;
+  max-width: 1256px;
   padding: 40px;
+  margin: 0 auto;
 }
