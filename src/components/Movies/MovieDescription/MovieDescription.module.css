@@ -8,12 +8,16 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+
+  color: #000000;
 }
 
 .movieDescription {
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
+
+  color: #111827;
 }
 
 .edit-icn {
@@ -23,4 +27,5 @@
   transition: fill ease-in 0.1s;
 
   cursor: pointer;
+  fill: #111827;
 }
