@@ -10,7 +10,7 @@ const Movie = () => {
       const res = await axios.get("movies");
       const datas = res.data;
 
-      // Modify here to selected more items (now limited to last)
+      // Modify here to selected more items (actually limited to last)
       let movie = [datas[datas.length - 1]];
 
       setMovies(movie);
