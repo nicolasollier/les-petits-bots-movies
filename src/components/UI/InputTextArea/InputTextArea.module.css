@@ -1,42 +1,40 @@
-.input {
+.text-area {
   width: 590px;
-  min-height: 38px;
-
+  min-height: 105px;
   box-sizing: border-box;
-  margin-top: 4px;
 
   border-radius: 6px;
   border: 1px solid #d1d5db;
   padding: 9px 13px;
 
-  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 24px;
   letter-spacing: -0.12px;
 
   color: #111827;
   box-shadow: 0px 1px 2px 0px #0000000d;
 }
 
-.input:focus {
+.text-area:focus {
   border: 1px solid #8c929c;
   outline: none;
 }
 
-.input-hasError {
+.text-area-hasError {
   width: 590px;
-  min-height: 38px;
-
+  min-height: 105px;
   box-sizing: border-box;
-  margin-top: 4px;
 
   border-radius: 6px;
   border: 1px solid #fca5a5;
   padding: 9px 13px;
 
-  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 24px;
   letter-spacing: -0.12px;
 
   color: #ef4444;
@@ -44,7 +42,17 @@
   box-shadow: 0px 1px 2px 0px #0000000d;
 }
 
-.input-hasError:focus {
+.charlimit {
+  margin-top: 8px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  color: #6b7280;
+}
+
+.text-area-hasError:focus {
   border: 1px solid #f87171;
   outline: none;
 }
