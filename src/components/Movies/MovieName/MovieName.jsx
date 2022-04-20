@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "../../UI/Card/Card";
+import axios from "axios";
 
 //Components
 import EditIcon from "../../UI/EditIcon/EditIcon";
@@ -10,31 +11,77 @@ import Button from "../../UI/Button/Button";
 //Custom classes
 import classes from "./MovieName.module.css";
 
-const MovieName = ({ movieName }) => {
+const MovieName = ({ movieDatas }) => {
+  const [name, setName] = useState(movieDatas.name);
   const [isEditable, setIsEditable] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  const inputIsInvalid = name.trim().length === "" || name.length > 256;
+
+  const handleNameChange = (e) => {
+    setHasError(false);
+    setName(e.target.value);
+  };
+
+  const updateMovieName = async () => {
+    await axios
+      .put(`movies/${movieDatas.id}`, {
+        name: name,
+        description: movieDatas.description,
+      })
+      .then((res) => {
+        const newMovieDatas = JSON.parse(res.config.data);
+        setName(newMovieDatas.name);
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
+  };
+
+  const handleNameSubmit = (e) => {
+    e.preventDefault();
+
+    if (inputIsInvalid) {
+      return setHasError(true);
+    }
+
+    updateMovieName();
+    setIsEditable(false);
+  };
 
   return (
     <Card>
-      {!isEditable ? (
-        //Displays when component is Editable
-        <>
-          <EditIcon onClick={() => setIsEditable((prevCheck) => !prevCheck)} />
-          <div style={{ padding: "24px" }}>
-            <span className={classes.subheading}>Titre</span>
-            <p className={classes.movieName}>#{movieName}</p>
-          </div>
-        </>
-      ) : (
-        //Displays when component is Non Editable
-        <>
-          <EditIcon onClick={() => setIsEditable((prevCheck) => !prevCheck)} />
-          <FormControl label="Titre" placeholder="Entrez un titre ici..." />
-          <FormFooter>
-            <Button>Annuler</Button>
-            <Button>Enregister</Button>
-          </FormFooter>
-        </>
-      )}
+      <form onSubmit={handleNameSubmit}>
+        {!isEditable ? (
+          //Displays when component is Editable
+          <>
+            <EditIcon
+              onClick={() => setIsEditable((prevCheck) => !prevCheck)}
+            />
+            <div style={{ padding: "24px" }}>
+              <span className={classes.subheading}>Titre</span>
+              <p className={classes.movieName}>{name}</p>
+            </div>
+          </>
+        ) : (
+          //Displays when component is Non Editable
+          <>
+            <FormControl
+              label="Titre"
+              inputPlaceholder="Entrez un titre ici..."
+              inputValue={name}
+              onInputChange={handleNameChange}
+              hasError={hasError}
+            />
+            <FormFooter>
+              <Button onClick={() => setIsEditable(false)}>Annuler</Button>
+              <Button disabled={hasError} type="submit">
+                Enregister
+              </Button>
+            </FormFooter>
+          </>
+        )}
+      </form>
     </Card>
   );
 };
