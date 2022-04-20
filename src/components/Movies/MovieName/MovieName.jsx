@@ -16,15 +16,19 @@ const MovieName = ({ movieName }) => {
         //Displays when component is Editable
         <div>
           <EditIcon onClick={() => setIsEditable((prevCheck) => !prevCheck)} />
-          <span className={classes.subheading}>Titre non editable</span>
-          <p className={classes.movieName}>#{movieName}</p>
+          <div className={classes["form-controls"]}>
+            <span className={classes.subheading}>Titre</span>
+            <p className={classes.movieName}>#{movieName}</p>
+          </div>
         </div>
       ) : (
         //Displays when component is Non Editable
         <div>
           <EditIcon onClick={() => setIsEditable((prevCheck) => !prevCheck)} />
-          <span className={classes.subheading}>Titre editable</span>
-          <p className={classes.movieName}>#{movieName}</p>
+          <div className={classes["form-controls"]}>
+            <span className={classes.subheading__onEdit}>Titre</span>
+            <input type="text" />
+          </div>
         </div>
       )}
     </Card>
