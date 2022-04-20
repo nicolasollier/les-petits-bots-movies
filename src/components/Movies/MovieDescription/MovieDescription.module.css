@@ -19,13 +19,3 @@
 
   color: #111827;
 }
-
-.edit-icn {
-  position: absolute;
-  top: 26px;
-  right: 26px;
-  transition: fill ease-in 0.1s;
-
-  cursor: pointer;
-  fill: #111827;
-}
