@@ -1,18 +1,19 @@
-.input {
+.form-control {
   display: flex;
   flex-direction: column;
+  padding: 24px;
 
   font-size: 14px;
   line-height: 20px;
   text-align: left;
 }
 
-.input label {
+.form-control label {
   font-weight: 500;
   color: #374151;
 }
 
-.input input {
+.form-control input {
   width: 590px;
   min-height: 38px;
 
@@ -30,7 +31,7 @@
   box-shadow: 0px 1px 2px 0px #0000000d;
 }
 
-.input input:focus {
+.form-control input:focus {
   border: 1px solid #8c929c;
   outline: none;
 }

@@ -11,8 +11,10 @@ const MovieDescription = ({ movieDescription }) => {
   return (
     <Card>
       <EditIcon />
-      <span className={classes.subheading}>Description</span>
-      <p className={classes.movieDescription}>#{movieDescription}</p>
+      <div style={{ padding: "24px" }}>
+        <span className={classes.subheading}>Description</span>
+        <p className={classes.movieDescription}>#{movieDescription}</p>
+      </div>
     </Card>
   );
 };

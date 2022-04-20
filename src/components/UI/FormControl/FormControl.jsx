@@ -1,15 +1,15 @@
 import React from "react";
 
 //Custom classes
-import classes from "./Input.module.css";
+import classes from "./FormControl.module.css";
 
-const Input = ({ label, placeholder }) => {
+const FormControl = ({ label, placeholder }) => {
   return (
-    <div className={classes.input}>
+    <div className={classes["form-control"]}>
       <label>{label}</label>
       <input type="text" placeholder={placeholder || "Please type here..."} />
     </div>
   );
 };
 
-export default Input;
+export default FormControl;

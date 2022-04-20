@@ -3,7 +3,8 @@ import Card from "../../UI/Card/Card";
 
 //Components
 import EditIcon from "../../UI/EditIcon/EditIcon";
-import Input from "../../UI/Input/Input";
+import FormControl from "../../UI/FormControl/FormControl";
+import FormFooter from "../../UI/FormFooter/FormFooter";
 
 //Custom classes
 import classes from "./MovieName.module.css";
@@ -15,21 +16,20 @@ const MovieName = ({ movieName }) => {
     <Card>
       {!isEditable ? (
         //Displays when component is Editable
-        <div>
+        <>
           <EditIcon onClick={() => setIsEditable((prevCheck) => !prevCheck)} />
-          <div className={classes["form-controls"]}>
+          <div style={{padding: "24px"}}>
             <span className={classes.subheading}>Titre</span>
             <p className={classes.movieName}>#{movieName}</p>
           </div>
-        </div>
+        </>
       ) : (
         //Displays when component is Non Editable
-        <div>
+        <>
           <EditIcon onClick={() => setIsEditable((prevCheck) => !prevCheck)} />
-          <div className={classes["form-controls"]}>
-            <Input label="Titre" placeholder="Entrez un titre ici..." />
-          </div>
-        </div>
+          <FormControl label="Titre" placeholder="Entrez un titre ici..." />
+          <FormFooter />
+        </>
       )}
     </Card>
   );
