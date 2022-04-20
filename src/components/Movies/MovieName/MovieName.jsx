@@ -28,9 +28,6 @@ const MovieName = ({ movieName }) => {
           <EditIcon onClick={() => setIsEditable((prevCheck) => !prevCheck)} />
           <div className={classes["form-controls"]}>
             <Input label="Titre" placeholder="Entrez un titre ici..." />
-            <div className={classes["form-controls__footer"]}>
-              
-            </div>
           </div>
         </div>
       )}

@@ -13,8 +13,9 @@
 }
 
 .input input {
-  height: 38px;
   width: 590px;
+  min-height: 38px;
+
   box-sizing: border-box;
   margin-top: 4px;
 
@@ -30,6 +31,6 @@
 }
 
 .input input:focus {
-  border: 1px solid #111827;
+  border: 1px solid #8c929c;
   outline: none;
 }
