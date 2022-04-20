@@ -7,6 +7,7 @@ import EditIcon from "../../UI/EditIcon/EditIcon";
 import FormControl from "../../UI/FormControl/FormControl";
 import FormFooter from "../../UI/FormFooter/FormFooter";
 import Button from "../../UI/Button/Button";
+import InputBase from "../../UI/InputBase/InputBase";
 
 //Custom classes
 import classes from "./MovieName.module.css";
@@ -74,13 +75,15 @@ const MovieName = ({ movieDatas, handleNameChanges }) => {
         ) : (
           //Displays when component is Non Editable
           <>
-            <FormControl
-              label="Titre"
-              inputPlaceholder="Entrez un titre ici..."
-              inputValue={name}
-              onInputChange={handleNameChange}
-              hasError={hasError}
-            />
+            <FormControl label="Titre">
+              <InputBase
+                inputPlaceholder="Entrez un titre ici..."
+                inputValue={name}
+                onInputChange={handleNameChange}
+                hasError={hasError}
+              />
+            </FormControl>
+
             <FormFooter>
               <Button onClick={handleCancel}>Annuler</Button>
               <Button disabled={hasError} type="submit">
