@@ -11,12 +11,10 @@ import Button from "../../UI/Button/Button";
 //Custom classes
 import classes from "./MovieName.module.css";
 
-const MovieName = ({ movieDatas }) => {
+const MovieName = ({ movieDatas, handleNameChanges }) => {
   const [name, setName] = useState(movieDatas.name);
   const [isEditable, setIsEditable] = useState(false);
   const [hasError, setHasError] = useState(false);
-
-  const inputIsInvalid = name.trim() === "" || name.length > 256;
 
   const handleNameChange = (e) => {
     setHasError(false);
@@ -47,11 +45,15 @@ const MovieName = ({ movieDatas }) => {
   const handleNameSubmit = (e) => {
     e.preventDefault();
 
-    if (inputIsInvalid) {
+    //Add validation
+    if (name.trim() === "" || name.length > 256) {
       return setHasError(true);
     }
-
+    //Send a PUT Request
     updateMovieName();
+    //Lift up the state
+    handleNameChanges(name);
+    //Return to non editable form
     setIsEditable(false);
   };
 

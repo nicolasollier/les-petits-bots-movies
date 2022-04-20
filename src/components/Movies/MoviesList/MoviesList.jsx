@@ -17,7 +17,7 @@ const imgUrl =
 
 //Made with <3 to be scalable if more movies are wanted in list
 const MoviesList = () => {
-  const [movies, setMovies] = useState([]);
+  const [movie, setMovie] = useState({});
 
   const getLastMovies = async () => {
     try {
@@ -28,10 +28,24 @@ const MoviesList = () => {
       //Modify here to get more items (actually limited to the last item)
       let movie = [datas[datas.length - 1]];
 
-      setMovies(movie);
+      setMovie(...movie);
     } catch (error) {
       throw new Error(error);
     }
+  };
+
+  const handleNameChanges = (newName) => {
+    let newMovie = movie;
+    newMovie.name = newName;
+
+    setMovie(newMovie);
+  };
+
+  const handleDescriptionChanges = (newDescription) => {
+    let newMovie = movie;
+    newMovie.description = newDescription;
+
+    setMovie(newMovie);
   };
 
   useEffect(() => {
@@ -41,15 +55,11 @@ const MoviesList = () => {
   return (
     <>
       <MoviePoster imgUrl={imgUrl} />
-      {movies.map((movie) => {
-        return (
-          <div className={classes.movie__infos} key={movie.id}>
-            <MovieId movieDatas={movie} />
-            <MovieName movieDatas={movie} />
-            <MovieDescription movieDats={movie} />
-          </div>
-        );
-      })}
+      <div className={classes.movie__infos} key={movie.id}>
+        <MovieId movieDatas={movie} />
+        <MovieName movieDatas={movie} handleNameChanges={handleNameChanges} />
+        <MovieDescription movieDats={movie} handleDescriptionChanges={handleDescriptionChanges} />
+      </div>
     </>
   );
 };
