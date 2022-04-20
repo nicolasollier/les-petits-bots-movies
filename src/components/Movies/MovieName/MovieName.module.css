@@ -1,3 +1,9 @@
+.form-controls {
+  display: flex;
+  flex-direction: column;
+  margin: 24px;
+}
+
 .subheading,
 .movieName {
   text-align: left;
@@ -18,14 +24,4 @@
   line-height: 24px;
 
   color: #111827;
-}
-
-.edit-icn {
-  position: absolute;
-  top: 26px;
-  right: 26px;
-  transition: fill ease-in 0.1s;
-
-  cursor: pointer;
-  fill: #111827;
 }

@@ -44,9 +44,9 @@ const MoviesList = () => {
       {movies.map((movie) => {
         return (
           <div className={classes.movie__infos} key={movie.id}>
-            <MovieId movieId={movie.id} />
-            <MovieName movieName={movie.name} />
-            <MovieDescription movieDescription={movie.description} />
+            <MovieId movieDatas={movie} />
+            <MovieName movieDatas={movie} />
+            <MovieDescription movieDats={movie} />
           </div>
         );
       })}
