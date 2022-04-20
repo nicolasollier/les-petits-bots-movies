@@ -10,15 +10,23 @@ import classes from "./MovieName.module.css";
 const MovieName = ({ movieName }) => {
   const [isEditable, setIsEditable] = useState(false);
 
-  const handleEdit = () => {
-    console.log(isEditable);
-  };
-
   return (
     <Card>
-      <EditIcon onClick={handleEdit} />
-      <span className={classes.subheading}>Titre</span>
-      <p className={classes.movieName}>#{movieName}</p>
+      {!isEditable ? (
+        //Displays when component is Editable
+        <div>
+          <EditIcon onClick={() => setIsEditable((prevCheck) => !prevCheck)} />
+          <span className={classes.subheading}>Titre non editable</span>
+          <p className={classes.movieName}>#{movieName}</p>
+        </div>
+      ) : (
+        //Displays when component is Non Editable
+        <div>
+          <EditIcon onClick={() => setIsEditable((prevCheck) => !prevCheck)} />
+          <span className={classes.subheading}>Titre editable</span>
+          <p className={classes.movieName}>#{movieName}</p>
+        </div>
+      )}
     </Card>
   );
 };
