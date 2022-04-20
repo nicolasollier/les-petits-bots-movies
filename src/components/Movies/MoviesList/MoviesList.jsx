@@ -58,7 +58,7 @@ const MoviesList = () => {
       <div className={classes.movie__infos} key={movie.id}>
         <MovieId movieDatas={movie} />
         <MovieName movieDatas={movie} handleNameChanges={handleNameChanges} />
-        <MovieDescription movieDats={movie} handleDescriptionChanges={handleDescriptionChanges} />
+        <MovieDescription movieDatas={movie} handleDescriptionChanges={handleDescriptionChanges} />
       </div>
     </>
   );
