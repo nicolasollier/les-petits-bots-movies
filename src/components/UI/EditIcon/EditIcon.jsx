@@ -3,9 +3,10 @@ import React from "react";
 //Custom classes
 import classes from "./EditIcon.module.css";
 
-const EditIcon = () => {
+const EditIcon = ({ onClick }) => {
   return (
     <svg
+      onClick={onClick}
       className={classes["edit-icn"]}
       width="20"
       height="20"

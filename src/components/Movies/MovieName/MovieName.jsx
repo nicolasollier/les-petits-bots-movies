@@ -10,10 +10,13 @@ import classes from "./MovieName.module.css";
 const MovieName = ({ movieName }) => {
   const [isEditable, setIsEditable] = useState(false);
 
+  const handleEdit = () => {
+    console.log(isEditable);
+  };
+
   return (
     <Card>
-      <EditIcon />
-      {console.log(isEditable)}
+      <EditIcon onClick={handleEdit} />
       <span className={classes.subheading}>Titre</span>
       <p className={classes.movieName}>#{movieName}</p>
     </Card>
