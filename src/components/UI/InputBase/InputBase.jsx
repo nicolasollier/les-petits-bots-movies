@@ -17,7 +17,7 @@ const InputBase = (props) => {
       />
       {props.hasError && (
         <p className={classes["error-message"]}>
-          This input should not be empty and greater than 256 characters!
+          This input should not be empty or contains more than 256 characters!
         </p>
       )}
     </>
