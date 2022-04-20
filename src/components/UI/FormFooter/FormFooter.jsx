@@ -1,12 +1,10 @@
-import React from 'react'
+import React from "react";
 
 //Custom classes
-import classes from "./FormFooter.module.css"
+import classes from "./FormFooter.module.css";
 
-const FormFooter = () => {
-  return (
-    <div className={classes["form-footer"]}>FormFooter</div>
-  )
-}
+const FormFooter = (props) => {
+  return <div className={classes["form-footer"]}>{props.children}</div>;
+};
 
-export default FormFooter
+export default FormFooter;
