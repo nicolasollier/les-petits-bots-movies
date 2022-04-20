@@ -4,6 +4,7 @@ import axios from "axios";
 
 //Components
 import EditIcon from "../../UI/EditIcon/EditIcon";
+import InputTextArea from "../../UI/InputTextArea/InputTextArea";
 import FormControl from "../../UI/FormControl/FormControl";
 import FormFooter from "../../UI/FormFooter/FormFooter";
 import Button from "../../UI/Button/Button";
@@ -68,19 +69,26 @@ const MovieDescription = ({ movieDatas, handleDescriptionChanges }) => {
             />
             <div style={{ padding: "24px" }}>
               <span className={classes.subheading}>Description</span>
-              <p className={classes.movieDescription}>{description}</p>
+              <p
+                style={{ maxWidth: "546px" }}
+                className={classes.movieDescription}
+              >
+                {description}
+              </p>
             </div>
           </>
         ) : (
           //Displays when component is Non Editable
           <>
-            <FormControl
-              label="Description"
-              inputPlaceholder="Entrez une description ici..."
-              inputValue={description}
-              onInputChange={handleDescriptionChange}
-              hasError={hasError}
-            />
+            <FormControl label="Description">
+              <InputTextArea
+                inputPlaceholder="Entrez une description ici..."
+                inputValue={description}
+                onInputChange={handleDescriptionChange}
+                hasError={hasError}
+              />
+            </FormControl>
+
             <FormFooter>
               <Button onClick={handleCancel}>Annuler</Button>
               <Button disabled={hasError} type="submit">
