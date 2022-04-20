@@ -25,7 +25,7 @@ const MovieName = ({ movieDatas }) => {
 
   const handleCancel = () => {
     setName(movieDatas.name);
-    setHasError(false)
+    setHasError(false);
     setIsEditable(false);
   };
 
