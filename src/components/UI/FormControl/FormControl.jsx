@@ -24,7 +24,7 @@ const FormControl = ({
       />
       {hasError && (
         <p className={classes["error-message"]}>
-          This input should not be empty and greater than 256 characters
+          This input should not be empty and greater than 256 characters!
         </p>
       )}
     </div>

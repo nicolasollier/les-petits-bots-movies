@@ -16,11 +16,17 @@ const MovieName = ({ movieDatas }) => {
   const [isEditable, setIsEditable] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  const inputIsInvalid = name.trim().length === "" || name.length > 256;
+  const inputIsInvalid = name.trim() === "" || name.length > 256;
 
   const handleNameChange = (e) => {
     setHasError(false);
     setName(e.target.value);
+  };
+
+  const handleCancel = () => {
+    setName(movieDatas.name);
+    setHasError(false)
+    setIsEditable(false);
   };
 
   const updateMovieName = async () => {
@@ -74,7 +80,7 @@ const MovieName = ({ movieDatas }) => {
               hasError={hasError}
             />
             <FormFooter>
-              <Button onClick={() => setIsEditable(false)}>Annuler</Button>
+              <Button onClick={handleCancel}>Annuler</Button>
               <Button disabled={hasError} type="submit">
                 Enregister
               </Button>

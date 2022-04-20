@@ -19,3 +19,8 @@
 .form-button:hover {
   background-color: hsl(192, 91%, 40%);
 }
+
+.form-button[disabled] {
+  background-color: #94A3B8;
+  cursor: not-allowed;
+}
