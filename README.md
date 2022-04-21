@@ -12,4 +12,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-<img width="1512" alt="image" src="https://user-images.githubusercontent.com/91204591/164397420-2d27a292-69d4-4ba1-abcd-dc4d20dafd1c.png">
+<img width="1512" alt="image" src="https://user-images.githubusercontent.com/91204591/164398234-fcb0357d-9a88-4990-81f0-f10428010d55.png">
